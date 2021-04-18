@@ -11,10 +11,15 @@ package com.tp.sec1.inner_classes;
  * 	1.)A normal java class can extend a class and can implement any number of interfaces.But an anonymous inner class can either extend a class or can implement an interface, but not both simultaneously.
  *  2.)In normal java class we can write any number of constructors butin anonymous inner class we can't write any constructor.It is because to write a constructor we need class name but anonymous inner classes doesn't have class name. 
  */
-//Abstract class whose abstract method is implemented inside Anonymous inner class.
-class ParentPart10{
+//Abstract class whose abstract method is implemented inside child class as well Anonymous inner class.
+abstract class ParentPart10{
+	public abstract void m1();
+}
+
+//Implementation class of Parent class
+class ChildPart10 extends ParentPart10{
 	public void m1() {
-		System.out.println("Method defined in Parent class.");
+		System.out.println("Method defined in child class.");
 	}
 }
 
@@ -29,11 +34,11 @@ public class Part10_Type3_AnonymousInnerClass {
 	};
 	
 	public static void main(String[] args) {
-		//Calling Parent class m1() method.
-		ParentPart10 p = new ParentPart10();
+		//Calling Child class implementation of m1() method.
+		ParentPart10 p = new ChildPart10();
 		p.m1();
 		
-		//Calling Anonymous inner class m1() method.
+		//Calling Anonymous inner class implementation of m1() method.
 		Part10_Type3_AnonymousInnerClass obj = new Part10_Type3_AnonymousInnerClass();
 		obj.c.m1();
 		
